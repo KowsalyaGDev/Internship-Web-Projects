@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character encoding and responsive viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quicksort Algorithm Visualizer</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main container for the entire application -->
+    <div class="container">
+        <!-- Header section with title -->
+        <header>
+            <h1>🔄 Quicksort Algorithm Visualizer</h1>
+            <p class="subtitle">Watch the Quicksort algorithm in action</p>
+        </header>
+
+        <!-- Control panel section for user interactions -->
+        <div class="control-panel">
+            <!-- Array size control -->
+            <div class="control-group">
+                <label for="arraySize">Array Size:</label>
+                <input type="range" id="arraySize" min="10" max="200" value="50" class="slider">
+                <span id="arraySizeValue">50</span>
+            </div>
+
+            <!-- Speed control slider -->
+            <div class="control-group">
+                <label for="speedControl">Speed:</label>
+                <input type="range" id="speedControl" min="10" max="500" value="100" class="slider">
+                <span id="speedValue">Medium</span>
+            </div>
+
+            <!-- Button group for sorting operations -->
+            <div class="button-group">
+                <!-- Generate new random array button -->
+                <button id="generateBtn" class="btn btn-primary">Generate Array</button>
+                <!-- Start sorting button -->
+                <button id="startBtn" class="btn btn-success" disabled>Start Sorting</button>
+                <!-- Reset to initial state button -->
+                <button id="resetBtn" class="btn btn-secondary" disabled>Reset</button>
+            </div>
+        </div>
+
+        <!-- Information section showing statistics and complexity -->
+        <div class="info-section">
+            <!-- Display sorting statistics -->
+            <div class="stat">
+                <span class="stat-label">Comparisons:</span>
+                <span id="comparisons" class="stat-value">0</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Swaps:</span>
+                <span id="swaps" class="stat-value">0</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Time Complexity:</span>
+                <span id="timeComplexity" class="stat-value">O(n log n) average</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Status:</span>
+                <span id="status" class="stat-value">Ready</span>
+            </div>
+        </div>
+
+        <!-- Visualization area where bars are displayed -->
+        <div class="visualization">
+            <!-- Canvas element is rendered here by JavaScript -->
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <!-- Information section about the algorithm -->
+        <div class="algorithm-info">
+            <h3>About Quicksort</h3>
+            <p>
+                Quicksort is a fast, efficient sorting algorithm that divides the array into smaller sub-arrays
+                and sorts them recursively. It uses a "divide and conquer" approach by selecting a pivot element
+                and partitioning the array around it.
+            </p>
+            <p><strong>Time Complexity:</strong> O(n log n) average, O(n²) worst case</p>
+            <p><strong>Space Complexity:</strong> O(log n)</p>
+        </div>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Snake Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-shell">
+    <header class="game-header">
+      <div>
+        <h1>Snake Game</h1>
+        <p>Use arrow keys to move. Eat food, grow, and avoid walls or yourself.</p>
+      </div>
+      <div class="score-board">
+        <span>Score:</span>
+        <span id="score">0</span>
+      </div>
+    </header>
+
+    <main class="game-area">
+      <canvas id="gameCanvas" width="400" height="400"></canvas>
+      <div class="overlay hidden" id="gameOverScreen">
+        <div class="overlay-card">
+          <h2>Game Over</h2>
+          <p>Your score: <span id="finalScore">0</span></p>
+          <button id="restartButton">Restart</button>
+        </div>
+      </div>
+    </main>
+
+    <footer class="game-footer">
+      <p>Responsive game design works on desktop and mobile screens.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

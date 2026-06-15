@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>Sales Dashboard</h1>
+            <p class="subtitle">Real-time Sales Analytics & Performance Metrics</p>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container">
+        <!-- KPI Cards Section -->
+        <section class="kpi-section">
+            <div class="kpi-card">
+                <div class="kpi-icon">📊</div>
+                <div class="kpi-content">
+                    <h3>Total Sales</h3>
+                    <p class="kpi-value">$450,250</p>
+                    <span class="kpi-change positive">↑ 12.5%</span>
+                </div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="kpi-icon">📦</div>
+                <div class="kpi-content">
+                    <h3>Total Orders</h3>
+                    <p class="kpi-value">1,542</p>
+                    <span class="kpi-change positive">↑ 8.2%</span>
+                </div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="kpi-icon">💰</div>
+                <div class="kpi-content">
+                    <h3>Revenue</h3>
+                    <p class="kpi-value">$325,180</p>
+                    <span class="kpi-change positive">↑ 15.3%</span>
+                </div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="kpi-icon">👥</div>
+                <div class="kpi-content">
+                    <h3>Customers</h3>
+                    <p class="kpi-value">8,420</p>
+                    <span class="kpi-change positive">↑ 6.8%</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Charts Section -->
+        <section class="charts-section">
+            <!-- Bar Chart -->
+            <div class="chart-container">
+                <div class="chart-wrapper">
+                    <h2>Monthly Sales Overview</h2>
+                    <canvas id="barChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Line Chart -->
+            <div class="chart-container">
+                <div class="chart-wrapper">
+                    <h2>Sales Trend Analysis</h2>
+                    <canvas id="lineChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Pie Chart -->
+            <div class="chart-container small">
+                <div class="chart-wrapper">
+                    <h2>Sales by Category</h2>
+                    <canvas id="pieChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Doughnut Chart -->
+            <div class="chart-container small">
+                <div class="chart-wrapper">
+                    <h2>Market Segment Distribution</h2>
+                    <canvas id="doughnutChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Area Chart -->
+            <div class="chart-container">
+                <div class="chart-wrapper">
+                    <h2>Revenue vs Cost Analysis</h2>
+                    <canvas id="areaChart"></canvas>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Sales Dashboard. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

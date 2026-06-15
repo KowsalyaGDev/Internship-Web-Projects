@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>World Population Census Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-o9N1j7kRjH+gqXG1qlu6Q8rHgO7Fu1fQ2Sa8mY+8U40=" crossorigin="" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <span class="logo">🌍</span>
+      <div>
+        <h1>World Population Census</h1>
+        <p>Interactive country population and capital explorer.</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-shell">
+    <aside class="panel">
+      <div class="panel-card">
+        <h2>Search a Country</h2>
+        <div class="search-field">
+          <input id="country-search" type="text" placeholder="Type a country name..." aria-label="Search country" />
+          <button id="search-button">Search</button>
+        </div>
+        <p class="helper-text">Select a result or search to zoom to that country.</p>
+      </div>
+      <div class="panel-card stats-card">
+        <h3>Country List</h3>
+        <ul id="country-list" class="country-list"></ul>
+      </div>
+    </aside>
+
+    <section class="map-frame">
+      <div id="map"></div>
+      <div class="map-overlay">
+        <div>
+          <strong>Tip:</strong> click a marker or use search to view country details.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-oZM44H1ke6yLT+xIPRSTyLzquZQKAf2u8Lz8g6nYpKA=" crossorigin=""></script>
+  <script src="script.js"></script>
+</body>
+</html>

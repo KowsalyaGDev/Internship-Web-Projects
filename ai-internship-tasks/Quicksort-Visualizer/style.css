@@ -1,0 +1,378 @@
+/* ============================================
+   QUICKSORT VISUALIZER - STYLESHEET
+   ============================================ */
+
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling - sets background and font */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+/* Main container - centered and padded */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    animation: slideIn 0.5s ease-out;
+}
+
+/* Animation for page load */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #667eea;
+    padding-bottom: 15px;
+}
+
+/* Main heading */
+header h1 {
+    font-size: 2.5em;
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+/* Subtitle text */
+.subtitle {
+    color: #666;
+    font-size: 1.1em;
+}
+
+/* Control panel - holds all controls */
+.control-panel {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #e9ecef;
+}
+
+/* Individual control group styling */
+.control-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+/* Label styling */
+.control-group label {
+    min-width: 120px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Slider styling */
+.slider {
+    flex: 1;
+    min-width: 150px;
+    height: 6px;
+    border-radius: 3px;
+    background: #ddd;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+/* Slider thumb styling for webkit browsers (Chrome, Safari) */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #667eea;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+/* Slider thumb hover effect */
+.slider::-webkit-slider-thumb:hover {
+    background: #764ba2;
+}
+
+/* Slider thumb styling for Firefox */
+.slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #667eea;
+    cursor: pointer;
+    border: none;
+    transition: background 0.3s;
+}
+
+/* Slider thumb hover effect for Firefox */
+.slider::-moz-range-thumb:hover {
+    background: #764ba2;
+}
+
+/* Value display next to sliders */
+.control-group span {
+    min-width: 80px;
+    font-weight: 600;
+    color: #667eea;
+}
+
+/* Button group - flexbox for horizontal layout */
+.button-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* Button styling - base styles for all buttons */
+.btn {
+    padding: 12px 25px;
+    font-size: 1em;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    flex: 1;
+    min-width: 120px;
+}
+
+/* Primary button (Generate) */
+.btn-primary {
+    background: #667eea;
+    color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: #5568d3;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Success button (Start Sorting) */
+.btn-success {
+    background: #28a745;
+    color: white;
+}
+
+.btn-success:hover:not(:disabled) {
+    background: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+}
+
+/* Secondary button (Reset) */
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background: #5a6268;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(108, 117, 125, 0.4);
+}
+
+/* Disabled button state */
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Information section - displays statistics */
+.info-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f0f7ff;
+    border-radius: 10px;
+    border: 2px solid #667eea;
+}
+
+/* Individual stat styling */
+.stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: white;
+    border-radius: 5px;
+    border-left: 4px solid #667eea;
+}
+
+/* Stat label */
+.stat-label {
+    font-weight: 600;
+    color: #333;
+}
+
+/* Stat value - displayed in different color */
+.stat-value {
+    font-weight: 700;
+    color: #667eea;
+    font-size: 1.1em;
+}
+
+/* Visualization area - canvas container */
+.visualization {
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+/* Canvas styling */
+#canvas {
+    border: 2px solid #667eea;
+    border-radius: 8px;
+    background: white;
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Algorithm information section */
+.algorithm-info {
+    background: #f0f7ff;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid #667eea;
+}
+
+/* Algorithm info heading */
+.algorithm-info h3 {
+    color: #667eea;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+/* Algorithm info paragraphs */
+.algorithm-info p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - MOBILE OPTIMIZATION
+   ============================================ */
+
+/* Tablet devices (screens smaller than 768px) */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .control-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .control-group label {
+        min-width: auto;
+    }
+
+    .slider {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .info-section {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .visualization {
+        min-height: 300px;
+    }
+}
+
+/* Mobile devices (screens smaller than 480px) */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .subtitle {
+        font-size: 0.9em;
+    }
+
+    .control-panel {
+        padding: 15px;
+    }
+
+    .control-group span {
+        min-width: 60px;
+    }
+
+    .info-section {
+        grid-template-columns: 1fr;
+    }
+
+    .visualization {
+        min-height: 250px;
+        padding: 10px;
+    }
+
+    .algorithm-info h3 {
+        font-size: 1.1em;
+    }
+
+    .algorithm-info p {
+        font-size: 0.9em;
+    }
+}
